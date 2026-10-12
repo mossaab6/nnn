@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">محلل شام كاش</string>
+    <string name="share_target_label">تحليل الإيصال</string>
+    <string name="notification_listener_label">قراءة إشعارات شام كاش</string>
+</resources>
