@@ -274,7 +274,7 @@ class BotEngine(
     private suspend fun peopleText(): String {
         val s = settings.current()
         val people = repo.summarizePeople(repo.allPeople(), repo.all())
-            .sortedWith(compareByDescending<com.smartcash.analyzer.data.PersonSummary> { it.person.pinned }.thenByDescending { it.lastTimestamp ?: 0 })
+            .sortedWith(compareByDescending<com.smartcash.analyzer.data.PersonSummary> { it.person.pinned }.thenByDescending { it.lastTimestamp ?: 0L })
         if (people.isEmpty()) return "لا يوجد أشخاص بعد."
         return buildString {
             append("👥 الأشخاص (${people.size})\n\n")

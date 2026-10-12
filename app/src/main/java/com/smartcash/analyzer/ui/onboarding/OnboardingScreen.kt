@@ -31,7 +31,7 @@ import androidx.compose.material.icons.rounded.AutoAwesome
 import androidx.compose.material.icons.rounded.DocumentScanner
 import androidx.compose.material.icons.rounded.NorthEast
 import androidx.compose.material.icons.rounded.NotificationsActive
-import androidx.compose.material.icons.rounded.Send
+import androidx.compose.material.icons.automirrored.rounded.Send
 import androidx.compose.material.icons.rounded.SouthWest
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
@@ -149,7 +149,7 @@ private fun Welcome() {
     Text("كل معاملاتك في شام كاش، محللة بالذكاء الاصطناعي.", color = MaterialTheme.colorScheme.onSurfaceVariant)
     Feature(Icons.Rounded.DocumentScanner, "يقرأ إيصالات PDF الممسوحة", "تحويل النص الممسوح إلى بيانات: الأسماء والمبلغ والتاريخ بدقة ومن دون تغيير")
     Feature(Icons.Rounded.NotificationsActive, "يقرأ إشعارات شام كاش", "يضيف ما تستلمه وترسله تلقائياً ولا يكرر أي معاملة")
-    Feature(Icons.Rounded.Send, "بوت تيليجرام", "أرسل الإيصال للبوت أو اسأله عن معاملاتك من أي مكان")
+    Feature(Icons.AutoMirrored.Rounded.Send, "بوت تيليجرام", "أرسل الإيصال للبوت أو اسأله عن معاملاتك من أي مكان")
     Feature(Icons.Rounded.AutoAwesome, "مساعد ذكي Grok", "اسأل: كم أرسلت هذا الأسبوع؟ ومن أكثر شخص استلمت منه؟")
 }
 

@@ -26,7 +26,7 @@ import androidx.compose.material.icons.rounded.Groups
 import androidx.compose.material.icons.rounded.PersonAdd
 import androidx.compose.material.icons.rounded.PushPin
 import androidx.compose.material.icons.rounded.Search
-import androidx.compose.material.icons.rounded.Sort
+import androidx.compose.material.icons.automirrored.rounded.Sort
 import androidx.compose.material.icons.outlined.PushPin
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
@@ -107,7 +107,7 @@ fun PeopleScreen(nav: NavHostController) {
                 title = { Text("الأشخاص (${people.size})") },
                 actions = {
                     Box {
-                        IconButton(onClick = { sortMenu = true }) { Icon(Icons.Rounded.Sort, "ترتيب") }
+                        IconButton(onClick = { sortMenu = true }) { Icon(Icons.AutoMirrored.Rounded.Sort, "ترتيب") }
                         DropdownMenu(expanded = sortMenu, onDismissRequest = { sortMenu = false }) {
                             listOf("recent" to "الأحدث", "sent" to "الأكثر إرسالاً له", "received" to "الأكثر استلاماً منه", "count" to "عدد المعاملات", "name" to "الاسم")
                                 .forEach { (k, l) -> DropdownMenuItem(text = { Text(l) }, onClick = { sort = k; sortMenu = false }) }

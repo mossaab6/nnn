@@ -455,7 +455,7 @@ Rules:
             "received" -> people.sortedByDescending { it.received(c) }
             "count" -> people.sortedByDescending { it.count }
             "name" -> people.sortedBy { it.person.displayName.lowercase() }
-            else -> people.sortedByDescending { it.lastTimestamp ?: 0 }
+            else -> people.sortedByDescending { it.lastTimestamp ?: 0L }
         }
         val limit = (a.i("limit") ?: 20).coerceIn(1, 100)
         return buildJsonObject {

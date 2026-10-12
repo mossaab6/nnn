@@ -313,7 +313,7 @@ private fun TelegramSection(s: AppSettings, snackbar: SnackbarHostState) {
                 scope.launch {
                     val r = runCatching { c.telegram.recentChats(token.trim()) }
                     busy = false
-                    r.onSuccess { list -> if (list.isEmpty()) snackbar.showSnackbar("أرسل /start للبوت من تيليجرام ثم أعد المحاولة") else chats = list }
+                    r.onSuccess { list -> if (list.isEmpty()) { snackbar.showSnackbar("أرسل /start للبوت من تيليجرام ثم أعد المحاولة") } else { chats = list } }
                         .onFailure { snackbar.showSnackbar("❌ ${it.message}") }
                 }
             }) { Text("اكتشاف") }
