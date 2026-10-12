@@ -50,20 +50,28 @@
    cd nnn
    git checkout claude/adoring-bohr-6a4gjh
    ```
-3. في Android Studio: **File ← Open** واختر مجلد `nnn`. انتظر حتى ينتهي **Gradle Sync** (يحمّل الملفات تلقائياً في أول مرة — قد يستغرق وقتاً).
+3. في Android Studio: **File ← Open** واختر مجلد `nnn` نفسه (وليس مشروعاً آخر يحتويه) ← **New Window**. انتظر حتى ينتهي **Gradle Sync** (يحمّل الملفات تلقائياً في أول مرة — قد يستغرق وقتاً).
 4. من القائمة: **Build ← Build App Bundle(s) / APK(s) ← Build APK(s)**.
 5. الملف الناتج: `app\build\outputs\apk\debug\app-debug.apk`. أو صِل هاتفك بـ USB (مع تفعيل USB debugging) واضغط ▶️ Run.
 
-### الطريقة 3: سطر الأوامر (cmd) على Windows
+### الطريقة 3: سطر الأوامر على Windows
 تحتاج JDK 17 أو أحدث و Android SDK (أسهل طريقة للحصول عليهما: تثبيت Android Studio مرة واحدة).
+
+في **PowerShell** (الطرفية الافتراضية في Android Studio) يجب كتابة `.\` قبل الأمر:
+```powershell
+cd nnn
+Set-Content local.properties "sdk.dir=C:/Users/$env:USERNAME/AppData/Local/Android/Sdk"
+.\gradlew.bat assembleDebug
+```
+وفي **cmd** العادي:
 ```cmd
 cd nnn
-echo sdk.dir=C\:\\Users\\%USERNAME%\\AppData\\Local\\Android\\Sdk> local.properties
+echo sdk.dir=C:/Users/%USERNAME%/AppData/Local/Android/Sdk> local.properties
 gradlew.bat assembleDebug
 ```
 - أول تشغيل يحمّل Gradle (~150MB) والمكتبات (~500MB) — هذا طبيعي ومرة واحدة فقط.
 - الناتج: `app\build\outputs\apk\debug\app-debug.apk`
-- لتشغيل الاختبارات: `gradlew.bat testDebugUnitTest`
+- لتشغيل الاختبارات: `.\gradlew.bat testDebugUnitTest`
 
 > ملاحظة: إذا ظهر خطأ اتصال عند تحميل الملفات من `dl.google.com` (بعض المناطق محجوبة)، استخدم VPN أثناء أول Sync فقط، أو استخدم الطريقة 1.
 
